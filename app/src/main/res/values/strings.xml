@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">e-news nigeria</string>
+
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="about_us_write_up">"e-news Nigeria" designed, developed and maintained by swagasoft developers.
+    E-mail- swagasoft@gmail.com
+    phone:+2348030576990</string>
+    <string name="mycompany">Swagasoft Developers</string>
+    <string name="home">Home</string>
+    <string name="rate">Rate this App</string>
+    <string name="aboutus">About us</string>
+    <string name="mail">Mail us a suggestion</string>
+
+    <string name="tip">If you have a suggestion, please use the \"MAIL US A SUGGESTION\" on the navigation bar.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

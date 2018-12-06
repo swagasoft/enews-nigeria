@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mybackground"
+    tools:context=".MainActivity"
+    tools:targetApi="lollipop">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/mybackground"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/mybackground">
+
+            <ImageView
+                android:id="@+id/bbcafrica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="13dp"
+                android:contentDescription="TODO"
+                android:onClick="bbbNewsClick"
+                android:src="@drawable/bbcafrica" />
+
+            <ImageView
+                android:id="@+id/dailypost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="14dp"
+                android:contentDescription="TODO"
+                android:onClick="dailyPostClick"
+                android:src="@drawable/dailypost" />
+
+            <ImageView
+                android:id="@+id/dailytrust"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="TODO"
+                android:onClick="dailyTrustClick"
+                android:src="@drawable/pmnews" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/mybackground">
+
+
+            <ImageView
+                android:id="@+id/cnn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="14dp"
+                android:contentDescription="TODO"
+                android:onClick="cnnClick"
+                android:src="@drawable/cnn" />
+
+            <ImageView
+                android:id="@+id/information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="TODO"
+                android:onClick="informationClick"
+                android:src="@drawable/informationnigeria" />
+
+            <ImageView
+                android:id="@+id/leadership"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="13dp"
+                android:contentDescription="TODO"
+                android:onClick="leadershipClick"
+                android:src="@drawable/leadership" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/mybackground">
+
+
+            <ImageView
+                android:id="@+id/naij"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="TODO"
+                android:onClick="naijClick"
+                android:src="@drawable/naij" />
+
+            <ImageView
+                android:id="@+id/premiumtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="14dp"
+                android:contentDescription="TODO"
+                android:onClick="premiumTimes"
+                android:src="@drawable/premiumtimes" />
+
+            <ImageView
+                android:id="@+id/tribune"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="14dp"
+                android:contentDescription="TODO"
+                android:onClick="tribuneClick"
+                android:src="@drawable/tribune" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/mybackground">
+
+            <ImageView
+                android:id="@+id/punch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="14dp"
+                android:contentDescription="TODO"
+                android:onClick="punchClick"
+                android:src="@drawable/punchnews" />
+
+            <ImageView
+                android:id="@+id/thisday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="TODO"
+                android:onClick="thisDayClick"
+                android:src="@drawable/thisdaynews" />
+
+            <ImageView
+                android:id="@+id/thesun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="14dp"
+                android:contentDescription="TODO"
+                android:onClick="theSunClick"
+                android:src="@drawable/thesun" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/mybackground">
+
+            <ImageView
+                android:id="@+id/sahara"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:contentDescription="TODO"
+                android:onClick="saharaClick"
+                android:src="@drawable/saharareporter" />
+
+            <ImageView
+                android:id="@+id/thecable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="TODO"
+                android:onClick="theCableClick"
+                android:src="@drawable/thecable" />
+
+            <ImageView
+                android:id="@+id/guardian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="14dp"
+                android:contentDescription="TODO"
+                android:onClick="theGuardianClick"
+                android:src="@drawable/theguardian" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/mybackground">
+
+            <ImageView
+                android:id="@+id/vanguard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="14dp"
+                android:contentDescription="TODO"
+                android:onClick="vanGuardClick"
+                android:src="@drawable/vanguard" />
+
+            <ImageView
+                android:id="@+id/thenation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="TODO"
+                android:onClick="theNationClick"
+                android:src="@drawable/thenation" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="14dp"
+                android:contentDescription="TODO"
+                android:onClick="pulseClick"
+                android:src="@drawable/theadvocate" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/mybackground">
+
+            <ImageView
+                android:id="@+id/eurosport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="TODO"
+                android:onClick="eurosportClick"
+                android:src="@drawable/eurosport" />
+
+            <ImageView
+                android:id="@+id/nairaland"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="14dp"
+                android:contentDescription="TODO"
+                android:onClick="nairalandClick"
+                android:src="@drawable/nairaland" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="14dp"
+                android:contentDescription="TODO"
+                android:onClick="superSportClick"
+                android:src="@drawable/supersport" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/mycompany"
+            android:textColor="#f95114"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</ScrollView>
+
