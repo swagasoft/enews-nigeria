@@ -59,6 +59,7 @@ public class BBCnews  extends AppCompatActivity{
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+                // switch statement for my side navigator
                 switch (item.getItemId()){
                     case  R.id.gohome:
                         Intent homeIntent = new Intent(BBCnews.this, MainActivity.class);

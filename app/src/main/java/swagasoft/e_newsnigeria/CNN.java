@@ -162,7 +162,7 @@ public class CNN  extends AppCompatActivity{
         myswipe.setRefreshing(true);
         WebSettings webSettings = webView.getSettings();
         final ProgressDialog progressDialog = new ProgressDialog(this);
-        webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         webView.loadUrl("https://edition.cnn.com/africa");
         webSettings.setDomStorageEnabled(true);
         webSettings.getAllowUniversalAccessFromFileURLs();

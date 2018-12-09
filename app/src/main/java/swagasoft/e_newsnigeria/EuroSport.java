@@ -171,7 +171,7 @@ public class EuroSport  extends AppCompatActivity{
         myswipe.setRefreshing(true);
         WebSettings webSettings = webView.getSettings();
         final ProgressDialog progressDialog = new ProgressDialog(this);
-        webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         webView.loadUrl("https://www.eurosport.com");
         webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         webSettings.getAllowUniversalAccessFromFileURLs();
