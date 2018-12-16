@@ -176,7 +176,7 @@ public class TheCable  extends AppCompatActivity{
         webSettings.getBlockNetworkLoads();
         webSettings.getMinimumLogicalFontSize();
         webSettings.getMinimumFontSize();
-        webSettings.setJavaScriptEnabled(false);
+        webSettings.setJavaScriptEnabled(true);
         if (Build.VERSION.SDK_INT >= 19) {
             webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         }

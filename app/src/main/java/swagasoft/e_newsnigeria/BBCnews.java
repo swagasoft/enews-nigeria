@@ -53,6 +53,7 @@ public class BBCnews  extends AppCompatActivity{
 
 
 
+
         //setting click for navigation view
         NavigationView navigationView = findViewById(R.id.myNavigationView);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -99,7 +100,30 @@ public class BBCnews  extends AppCompatActivity{
                         mailIntent.setType("message/rfc822");
                         chooser =Intent.createChooser(mailIntent,"Send Email");
                         startActivity(chooser );
+                        break;
 
+                    case  R.id.cache:
+
+                        AlertDialog.Builder checkBuider = new AlertDialog.Builder(BBCnews.this);
+                        checkBuider.setIcon(R.drawable.alert);
+                        checkBuider.setTitle("Apllication cache");
+                        checkBuider.setMessage("Are you sure you want to clear app cache ?");
+                        checkBuider.setPositiveButton("NO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent sameIntent = new Intent(BBCnews.this, BBCnews.class);
+                            }
+                        });
+
+                        checkBuider.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+
+                        AlertDialog alertDialog =  checkBuider.create();
+                        alertDialog.show();
                 }
                 return  false;
             }
@@ -162,14 +186,39 @@ public class BBCnews  extends AppCompatActivity{
 
 
 }
+
+
+
+
+
+
     private void loadWebviewInSwipe()
+
     {
+
+
+        final String myHtmlString = "<html><head>" +
+                "<script type='text/javascript'>" +
+                "function loadWeb(){" +
+                "alert('')" +
+                "}" +
+                "</script>" +
+                "</head>" +
+
+                "<body >" +
+                "<h3>network problem! </h3>" +
+                "<p>please check your internet connection and try again." +
+                "</body></html>";
+
+
+
+        String address = ("https://www.bbc.com/news/world/africa");
         webView = findViewById(R.id.myWebview);
         myswipe.setRefreshing(true);
         WebSettings webSettings = webView.getSettings();
         final ProgressDialog progressDialog = new ProgressDialog(this);
             webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        webView.loadUrl("https://www.bbc.com/news/world/africa");
+        webView.loadUrl(address);
         webSettings.setDomStorageEnabled(true);
         webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         webSettings.getAllowUniversalAccessFromFileURLs();
@@ -205,7 +254,7 @@ public class BBCnews  extends AppCompatActivity{
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 super.onReceivedError(view, errorCode, description, failingUrl);
                 Toast.makeText(getApplicationContext(), "OOP! Internet Connection Problem",Toast.LENGTH_LONG).show();
-                view.loadUrl("about:blank");
+                view.loadData(myHtmlString, "text/html",null);
 
 
             }

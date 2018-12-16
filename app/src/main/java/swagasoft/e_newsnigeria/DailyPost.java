@@ -164,6 +164,21 @@ public class DailyPost  extends AppCompatActivity{
     }
     private void loadWebviewInSwipe()
     {
+
+        final String myHtmlString = "<html><head>" +
+                "<script type='text/javascript'>" +
+                "function loadWeb(){" +
+                "alert('')" +
+                "}" +
+                "</script>" +
+                "</head>" +
+
+                "<body >" +
+                "<h3>network problem! </h3>" +
+                "<p>please check your internet connection and try again." +
+                "</body></html>";
+
+
         webView = findViewById(R.id.myWebview);
         myswipe.setRefreshing(true);
         WebSettings webSettings = webView.getSettings();
@@ -211,7 +226,7 @@ public class DailyPost  extends AppCompatActivity{
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 super.onReceivedError(view, errorCode, description, failingUrl);
                 Toast.makeText(getApplicationContext(), "OOP! Internet Connection Problem",Toast.LENGTH_LONG).show();
-                view.loadUrl("about:blank");
+                view.loadData(myHtmlString, "text/html",null);
 
 
             }

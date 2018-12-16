@@ -38,10 +38,7 @@ import android.widget.Toast;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
 
-
-// this class was replace with the   THE ADVOCATE NEW PAPER
-
-class Naijajist  extends AppCompatActivity{
+public class Advocate  extends AppCompatActivity{
     private ActionBarDrawerToggle mToogle;
     private WebView webView;
     private SwipeRefreshLayout myswipe;
@@ -62,9 +59,10 @@ class Naijajist  extends AppCompatActivity{
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+                // switch statement for my side navigator
                 switch (item.getItemId()){
                     case  R.id.gohome:
-                        Intent homeIntent = new Intent(Naijajist.this, MainActivity.class);
+                        Intent homeIntent = new Intent(Advocate.this, MainActivity.class);
                         homeIntent.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(homeIntent);
                         break;
@@ -86,7 +84,7 @@ class Naijajist  extends AppCompatActivity{
                         break;
 
                     case R.id.about:
-                        Intent aboutus = new Intent(Naijajist.this , AboutUs.class);
+                        Intent aboutus = new Intent(Advocate.this , AboutUs.class);
                         startActivity(aboutus);
 
 
@@ -101,7 +99,30 @@ class Naijajist  extends AppCompatActivity{
                         mailIntent.setType("message/rfc822");
                         chooser =Intent.createChooser(mailIntent,"Send Email");
                         startActivity(chooser );
+                        break;
 
+                    case  R.id.cache:
+
+                        AlertDialog.Builder checkBuider = new AlertDialog.Builder(Advocate.this);
+                        checkBuider.setIcon(R.drawable.alert);
+                        checkBuider.setTitle("Apllication cache");
+                        checkBuider.setMessage("Are you sure you want to clear app cache ?");
+                        checkBuider.setPositiveButton("NO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent sameIntent = new Intent(Advocate.this, BBCnews.class);
+                            }
+                        });
+
+                        checkBuider.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+
+                        AlertDialog alertDialog =  checkBuider.create();
+                        alertDialog.show();
                 }
                 return  false;
             }
@@ -120,7 +141,7 @@ class Naijajist  extends AppCompatActivity{
         });
 
         if(!isInternetavalable()){
-            android.app.AlertDialog.Builder checkBuilder = new android.app.AlertDialog.Builder(Naijajist.this);
+            android.app.AlertDialog.Builder checkBuilder = new android.app.AlertDialog.Builder(Advocate.this);
             checkBuilder.setIcon(R.drawable.alert);
             checkBuilder.setTitle("FAILED!");
             checkBuilder.setMessage("Check your internet Connection.");
@@ -160,12 +181,10 @@ class Naijajist  extends AppCompatActivity{
         // display and hide action action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        setTitle("  >>>> The Advocate  ");
+        setTitle("   The advocate ");
 
 
     }
-
-
     private void loadWebviewInSwipe()
     {
         webView = findViewById(R.id.myWebview);
@@ -173,13 +192,14 @@ class Naijajist  extends AppCompatActivity{
         WebSettings webSettings = webView.getSettings();
         final ProgressDialog progressDialog = new ProgressDialog(this);
         webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        webView.loadUrl("http://www.theadvocatengr.com/news/index.php");
+        webView.loadUrl("http://theadvocatengr.com");
+        webSettings.setDomStorageEnabled(true);
         webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         webSettings.getAllowUniversalAccessFromFileURLs();
         webSettings.getBlockNetworkLoads();
         webSettings.getMinimumLogicalFontSize();
         webSettings.getMinimumFontSize();
-        webSettings.setJavaScriptEnabled(false);
+        // webSettings.setJavaScriptEnabled(true);
         if (Build.VERSION.SDK_INT >= 19) {
             webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         }
@@ -213,14 +233,14 @@ class Naijajist  extends AppCompatActivity{
 
             }
 
-            @Override
+           /* @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
                 if (handler !=null){
                     handler.proceed();
                 }else {
                     super.onReceivedSslError(view, handler, error);
                 }
-            }
+            }*/
 
             @Override
             public void onPageFinished(WebView view, String url) {
@@ -233,13 +253,7 @@ class Naijajist  extends AppCompatActivity{
 
         });
 
-
-
     }
-
-
-
-
 
 
     @Override
@@ -247,14 +261,14 @@ class Naijajist  extends AppCompatActivity{
         if (webView.canGoBack()){
             webView.goBack();
         }else {
-            AlertDialog.Builder checkBuider = new AlertDialog.Builder(Naijajist.this);
+            AlertDialog.Builder checkBuider = new AlertDialog.Builder(Advocate.this);
             checkBuider.setIcon(R.drawable.alert);
             checkBuider.setTitle("No More Page");
             checkBuider.setMessage("Select another News ?");
             checkBuider.setPositiveButton("NO", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent sameIntent = new Intent(Naijajist.this, BBCnews.class);
+                    Intent sameIntent = new Intent(Advocate.this, Advocate.class);
                 }
             });
 

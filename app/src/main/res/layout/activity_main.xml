@@ -253,7 +253,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginEnd="14dp"
                 android:contentDescription="TODO"
-                android:onClick="pulseClick"
+                android:onClick="advocateClick"
                 android:src="@drawable/theadvocate" />
         </RelativeLayout>
 

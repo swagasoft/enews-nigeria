@@ -20,4 +20,9 @@
         android:id="@+id/mailus"
         android:title="@string/mail"
         android:icon="@drawable/ic_email" />
+
+    <item
+        android:id="@+id/cache"
+        android:title="@string/cache"
+        android:icon="@drawable/ic_email" />
 </menu>

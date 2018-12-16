@@ -168,7 +168,7 @@ public class Guardian  extends AppCompatActivity{
         WebSettings webSettings = webView.getSettings();
         final ProgressDialog progressDialog = new ProgressDialog(this);
         webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        webView.loadUrl("https://www.theguardian.com/international");
+        webView.loadUrl("https://www.m.guardian.com.ng");
         webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         webSettings.getAllowUniversalAccessFromFileURLs();
         webSettings.getBlockNetworkLoads();
@@ -196,37 +196,44 @@ public class Guardian  extends AppCompatActivity{
                 }
             }
         });
-        webView.setWebViewClient( new WebViewClient(){
 
 
-            @Override
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                super.onReceivedError(view, errorCode, description, failingUrl);
-                Toast.makeText(getApplicationContext(), "OOP! Internet Connection Problem",Toast.LENGTH_LONG).show();
-                view.loadUrl("about:blank");
+        try
+        {
+            webView.setWebViewClient( new WebViewClient(){
+                                          @Override
+                                          public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                                              super.onReceivedError(view, errorCode, description, failingUrl);
+                                              Toast.makeText(getApplicationContext(), "OOP! Internet Connection Problem",Toast.LENGTH_LONG).show();
+                                              view.loadUrl("about:blank");
+
+                                          }
+
+                                          @Override
+                                          public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                                              if (handler !=null){
+                                                  handler.proceed();
+                                              }else {
+                                                  super.onReceivedSslError(view, handler, error);
+                                              }
+                                          }
+
+                                          @Override
+                                          public void onPageFinished(WebView view, String url) {
+                                              super.onPageFinished(view, url);
+                                              myswipe.setRefreshing(false);
 
 
-            }
-
-            @Override
-            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-                if (handler !=null){
-                    handler.proceed();
-                }else {
-                    super.onReceivedSslError(view, handler, error);
-                }
-            }
-
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                myswipe.setRefreshing(false);
+                                          }
 
 
-            }
+                                      }
+            );
 
+        }catch (Exception e){
 
-        });
+            Toast.makeText(getApplicationContext(),"poor network , please try again",Toast.LENGTH_LONG).show();
+        }
 
 
 

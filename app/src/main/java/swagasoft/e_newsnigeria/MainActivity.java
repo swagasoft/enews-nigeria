@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity
         //creating Action bar
        getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-       getSupportActionBar().setTitle(" >>> e-news-Nigeria");
+       getSupportActionBar().setTitle("   e-news-Nigeria");
     }
 
     //creating click listener for every image
@@ -144,9 +144,9 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    public  void pulseClick(View view)
+    public  void advocateClick(View view)
     {
-        Intent intent = new Intent( this , Naijajist.class);
+        Intent intent = new Intent( this , Advocate.class);
         intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

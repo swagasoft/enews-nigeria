@@ -169,13 +169,13 @@ public class TheSun  extends AppCompatActivity{
         WebSettings webSettings = webView.getSettings();
         final ProgressDialog progressDialog = new ProgressDialog(this);
         webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        webView.loadUrl("https://www.nairaland.com");
+        webView.loadUrl("https://sunnewsonline.com/home-1/");
         webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         webSettings.getAllowUniversalAccessFromFileURLs();
         webSettings.getBlockNetworkLoads();
         webSettings.getMinimumLogicalFontSize();
         webSettings.getMinimumFontSize();
-        webSettings.setJavaScriptEnabled(false);
+        webSettings.setJavaScriptEnabled(true);
         if (Build.VERSION.SDK_INT >= 19) {
             webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         }
@@ -228,16 +228,7 @@ public class TheSun  extends AppCompatActivity{
 
 
         });
-
-
-
     }
-
-
-
-
-
-
 
     @Override
     public void onBackPressed() {
